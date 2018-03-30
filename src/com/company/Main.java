@@ -13,23 +13,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Action firstdel = Main::Good;
-        firstdel.foo("s1");
+        Action firstDel = Main::Good;
+        firstDel.foo("s1");
 
         Action secondDel = Main::Morning;
         secondDel.foo("s2");
 
         Action multiDel = s -> {
-            firstdel.foo(s);
+            firstDel.foo(s);
             secondDel.foo(s);
         };
 
-        Action multiMinusfirstdel = s -> {
+        Action multiMinusfirstDel = s -> {
             secondDel.foo(s);
         };
 
         System.out.println("Invoking delegate firstdel: ");
-        firstdel.foo("A");
+        firstDel.foo("A");
 
         System.out.println("Invoking delegate secondDel: ");
         secondDel.foo("B");
@@ -38,7 +38,7 @@ public class Main {
         multiDel.foo("C");
 
         System.out.println("Invoking delegate multiMinusfirstdel: ");
-        multiMinusfirstdel.foo("D");
+        multiMinusfirstDel.foo("D");
 
     }
 }
